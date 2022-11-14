@@ -1,0 +1,8 @@
+<div class="blog-container">
+    <form class="blog-form" method="post" action=<?php echo $block->getUrl('blogmanager/blog/save');?> 
+            data-mage-init='{"validation":{}}'>
+        Title: <input type="text" name="title" class="required-entry"/><br><br>
+        Content: <textarea name="content" class="required-entry validate-no-html-tags"></textarea><br><br>
+        <button type="submit">Submit</button>
+    </form>
+</div>

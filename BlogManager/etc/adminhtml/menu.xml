@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Webkul_BlogManager::blogmanager" 
+            translate="title" 
+            title="Blog Management" 
+            module="Webkul_BlogManager" 
+            sortOrder="10" 
+            resource="Webkul_BlogManager::blogmanager"/>
+        
+        <add id="Webkul_BlogManager::blog" 
+            translate="title" 
+            title="Manage" 
+            module="Webkul_BlogManager" 
+            sortOrder="10" 
+            resource="Webkul_BlogManager::blog" 
+            parent="Webkul_BlogManager::blogmanager" 
+            action="blogmanager/blog/index"/>
+    </menu>
+</config>

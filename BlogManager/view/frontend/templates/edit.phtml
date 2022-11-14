@@ -1,0 +1,12 @@
+<?php
+    $blog = $this->getBlogs();
+?>
+<div class="blog-container">
+    <form class="blog-form" method="post" action=<?php echo $this->getUrl('blogmanager/blog/save');?>
+            data-mage-init='{"validation":{}}'>
+        <input type="hidden" name="id" value="<?= $blog->getId();?>"/>
+        Title: <input type="text" name="title" class="required-entry" value="<?= $blog->getTitle();?>"/><br><br>
+        Content: <textarea name="content" class="required-entry validate-no-html-tags"><?= $blog->getContent();?></textarea><br><br>
+        <button type="submit">Submit</button>
+    </form>
+</div>

@@ -1,0 +1,36 @@
+<table>
+    <tr>
+        <th>
+            <?= __("Id")?>
+        </th>
+        <th>
+            <?= __("Title")?>
+        </th>
+        <th>
+            <?= __("Content")?>
+        </th>
+        <th>
+            <?= __("Action")?>
+        </th>
+    </tr>
+    <?php
+    $blogs = $block->getBlogs();
+
+    foreach ($blogs as $blog) {?>
+    <tr>
+        <td>
+            <?= $blog->getId()?>
+        </td>
+        <td>
+            <?= $blog->getTitle()?>
+        </td>
+        <td>
+            <?= substr($blog->getContent(), 0, 20).'...'?>
+        </td>
+        <td>
+            <a href="<?= $block->getUrl('blogmanager/blog/edit', ['id'=>$blog->getId()])?>"><?= __("Edit")?></a> 
+            <a href="<?= $block->getUrl('blogmanager/blog/delete', ['id'=>$blog->getId()])?>"><?= __("Delete")?></a>
+        </td>
+    </tr>
+    <?php } ?>
+</table>
